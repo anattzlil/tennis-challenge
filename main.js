@@ -11,8 +11,10 @@ var TennisGame = function (name1, name2) {
   };
   this.isDeuce = function () {
     if (this.playerOneScore >= 3 && this.playerOneScore === this.playerTwoScore){
+      console.log ('true');
       return true;
     } else {
+      console.log(false);
       return false;
     }
   };
@@ -63,15 +65,15 @@ var TennisGame = function (name1, name2) {
       return 'Fifteen all';
     }else if (this.playerOneScore === this.playerTwoScore && this.playerOneScore === 2){
       return 'Thirty all';
-    }else if (this.isDeuce) {
+    }else if (this.isDeuce()) {
       return 'Deuce';
-    }else if (this.hasAdvantage && this.playerOneScore > this.playerTwoScore) {
-      return 'Atvantage ' + name1;
-    }else if (this.hasAdvantage && this.playerTwoScore > this.playerOneScore) {
-      return 'Atvantage ' + name2;
-    }else if (this.hasWinner && this.playerOneScore > this.playerTwoScore ) {
+    }else if (this.hasAdvantage() && this.playerOneScore > this.playerTwoScore) {
+      return 'Adsvantage ' + name1;
+    }else if (this.hasAdvantage() && this.playerTwoScore > this.playerOneScore) {
+      return 'Advantage ' + name2;
+    }else if (this.hasWinner() && this.playerOneScore > this.playerTwoScore ) {
       return name1 + ' wins';
-    }else if (this.hasWinner && this.playerTwoScore > this.playerOneScore) {
+    }else if (this.hasWinner() && this.playerTwoScore > this.playerOneScore) {
       return name2 + ' wins';
     }else {
       return this.translateScore(this.playerOneScore) + ', ' + this.translateScore(this.playerTwoScore); 

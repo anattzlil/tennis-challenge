@@ -117,12 +117,16 @@ describe("translateScore", function () {
 
 describe("getScore", function () {
   it("should return the winner if there is one", function () {
+    console.log (game.getScore());
+    console.log("P1-"+game.playerOneScore + "p2-" + game.playerTwoScore);
     game.playerTwoScores();
     game.playerTwoScores();
     game.playerTwoScores();
     game.playerTwoScores();
-
+    console.log("P1-"+game.playerOneScore + "p2-" + game.playerTwoScore);
+    console.log (game.getScore());
     expect(game.getScore()).toEqual("Avi wins");
+    
   });
 
   it("should return the advantage if there is one", function () {
